@@ -69,6 +69,7 @@ Start with the [Hello World](hello-world) and then jump to the topic you are int
 - [Settings](settings)
 - [Signals](signals)
 - [State](state)
+- [Toolbar item](toolbar-button)
 - [Widgets](widgets)
 
 You can expect from each example:
@@ -183,6 +184,12 @@ Use Signals to allow Widgets communicate with each others.
 Use State persistence in an extension.
 
 [![State](state/preview.gif)](state)
+
+### [Toolbar item](toolbar-button)
+
+Add a new button to the notebook toolbar.
+
+[![Toolbar button](toolbar-button/Preview.gif)](toolbar-button)
 
 ### [Widgets](widgets)
 
