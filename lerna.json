@@ -17,6 +17,7 @@
     "settings",
     "signals",
     "state",
+    "toolbar-button",
     "widgets"
   ],
   "npmClient": "jlpm",

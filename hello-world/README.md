@@ -22,12 +22,14 @@ like this:
 
 ```bash
 author_name []: tuto
-python_name [myextension]: hello_world
-extension_name [hello_world]: hello-world
+author_email []: tuto@help.you
+labextension_name [myextension]: hello-world
+python_name [hello_world]:
 project_short_description [A JupyterLab extension.]: Minimal JupyterLab example
+has_settings [n]:
 has_server_extension [n]:
 has_binder [n]: y
-repository [https://github.com/github_username/hello_world]:
+repository [https://github.com/github_username/hello-world]:
 ```
 
 > The python name should not contain `-`. It is nice for user to test your extension online, so the `has_binder` was set to _yes_.
@@ -100,14 +102,16 @@ The following sections will walk you through the extension code files.
 Start with the file `src/index.ts`. This typescript file contains the main
 logic of the extension. It begins with the following import section:
 
+<!-- prettier-ignore-start -->
 ```ts
 // src/index.ts#L1-L4
 
 import {
   JupyterFrontEnd,
-  JupyterFrontEndPlugin
+  JupyterFrontEndPlugin,
 } from '@jupyterlab/application';
 ```
+<!-- prettier-ignore-end -->
 
 `JupyterFrontEnd` is the main Jupyterlab application class. It allows you to
 access and modify some of its main components. `JupyterFrontEndPlugin` is the class
@@ -116,10 +120,10 @@ called `@jupyterlab/application`. The dependency of your extension on this
 package is declared in the file `package.json`:
 
 ```json5
-// package.json#L46-L48
+// package.json#L50-L52
 
 "dependencies": {
-  "@jupyterlab/application": "^3.0.0"
+  "@jupyterlab/application": "^3.0.11"
 },
 ```
 
@@ -143,7 +147,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
 ```ts
 // src/index.ts#L14-L17
 
-  }
+  },
 };
 
 export default plugin;
@@ -230,7 +234,7 @@ a bit. Simply replace the `activate` function with the following lines:
 
 activate: (app: JupyterFrontEnd) => {
   console.log('the JupyterLab main application:', app);
-}
+},
 ```
 <!-- prettier-ignore-end -->
 
